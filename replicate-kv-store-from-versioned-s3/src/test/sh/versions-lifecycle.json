@@ -1,0 +1,12 @@
+{
+  "Rules": [
+    {
+      "ID": "Expire previous versions after a week",
+      "Prefix": "",
+      "NoncurrentVersionExpiration": {
+        "NoncurrentDays": 7
+      },
+      "Status": "Enabled"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  BucketName:
+    Type: String
+  PrevVersionExpirationDays:
+    Type: Integer
+Resources:
+  VersionedBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+      LifecycleConfiguration:
+        Rules:
+          - Id: !Sub Delete previous version in ${BucketName} after ${PrevVersionExpirationDays} days
+            Status: Enabled
+            NoncurrentVersionExpirationInDays: !Ref PrevVersionExpirationDays
