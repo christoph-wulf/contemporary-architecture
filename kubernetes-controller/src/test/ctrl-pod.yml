@@ -1,0 +1,8 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: controller-pod
+spec:
+  containers:
+    - image: kubernetes-controller:84150569182bb5501dc9b89d8625309fed194c18-SNAPSHOT
+      name: controller-container
